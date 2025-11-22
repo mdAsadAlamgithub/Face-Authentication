@@ -1,3 +1,4 @@
+// Test camera indices
 import cv2
 
 for i in range(5):
