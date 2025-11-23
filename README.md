@@ -7,7 +7,7 @@ The system does **not require any IoT hardware** , works completely offline, and
 
 ## Key Features:
 - PyQt5 graphical interface with live webcam feed
-- Deep learning–based face recognition using DeepFace (FaceNet + MTCNN)
+- Deep learning–based face recognition using DeepFace (ArcFace + MTCNN)
 - Secure authentication flow
 - Confidential dashboard unlock upon successful recognition
 - Pure Python implementation with no external IoT devices
@@ -15,6 +15,7 @@ The system does **not require any IoT hardware** , works completely offline, and
 
 ## How to run Project (setup):
 1. Create and activate a virtual environment (recommended).
-2. pip install -r requirements.txt.
-3. Create the known_faces/ directory and add enrollment images (one per user; file named username.jpg). Alternatively run python enroll.py to add.
-4. Run python app.py.
+2. use python version 3.9 .
+3. pip install -r requirements.txt.
+4. Create the known_faces/ directory and add enrollment images (one per user; file named username.jpg). Alternatively run python enroll.py to add.
+5. Run python app.py.
