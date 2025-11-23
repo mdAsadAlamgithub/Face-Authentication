@@ -8,7 +8,7 @@ from deepface import DeepFace
 import numpy as np
 
 KNOWN_DIR = 'known_faces'
-THRESHOLD = 0.6  # cosine distance threshold — tune as needed
+THRESHOLD = 1.0  # cosine distance threshold — tune as needed
 
 class CameraThread(QtCore.QThread):
     frame_ready = QtCore.pyqtSignal(object)
@@ -83,7 +83,7 @@ class MainWindow(QtWidgets.QWidget):
 
         try:
             # use DeepFace.find to search known faces
-            df = DeepFace.find(img_path = tmp_path, db_path = KNOWN_DIR, model_name='Facenet', detector_backend='mtcnn', enforce_detection=False)
+            df = DeepFace.find(img_path = tmp_path, db_path = KNOWN_DIR, model_name='ArcFace', detector_backend='mtcnn',distance_metric='cosine', enforce_detection=False)
             # DeepFace.find returns a pandas DataFrame with columns like identity and VGGFace2_cosine or distance column names
             # We'll inspect returned dataframe(s)
             authorized_label = None
